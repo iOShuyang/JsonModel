@@ -56,7 +56,7 @@ class Property {
     func toString() -> (String, String){
         var propertyStr = ""
         var initStr = ""
-        let propertyKeyNormal = propertyKey.replacingOccurrences(of: "_", with: "")
+        let propertyKeyNormal = propertyKey.className(withPrefix: prefixStr).capitalized.replacingOccurrences(of: "_", with: "").lowercaseFirstChar()
         let propertyKeyCapitalized = propertyKey.className(withPrefix: prefixStr).capitalized.replacingOccurrences(of: "_", with: "")
         switch type {
         case .String:
