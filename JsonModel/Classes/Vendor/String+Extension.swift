@@ -38,8 +38,10 @@ extension String {
     }
     
     mutating func removeLastChar() {
-        let range = self.index(endIndex, offsetBy: -1)..<self.endIndex
-        self.removeSubrange(range)
+        if self.count > 0 {
+            let range = self.index(endIndex, offsetBy: -1)..<self.endIndex
+            self.removeSubrange(range)
+        }
     }
     
     mutating func removeFistChar() {
